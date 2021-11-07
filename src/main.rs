@@ -17,10 +17,7 @@ impl Component for Model {
     type Properties = ();
 
     fn create(_props: Self::Properties, link: ComponentLink<Self>) -> Self {
-        Self {
-            link,
-            value: 0,
-        }
+        Self { link, value: 0 }
     }
 
     fn update(&mut self, msg: Self::Message) -> ShouldRender {
@@ -57,7 +54,6 @@ impl Component for Model {
                 <button onclick=self.link.callback(|_| Msg::AddOne)>{ "+1" }</button>
                 <button onclick=self.link.callback(|_| Msg::Reset)>{ "Reset" }</button>
                 <button onclick=self.link.callback(|_| Msg::SubtractOne)>{ "-1" }</button>
-
                 <button onclick=self.link.callback(|_| Msg::Square)>{ "**" }</button>
                 <p>{ self.value }</p>
             </div>
